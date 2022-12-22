@@ -29,6 +29,14 @@ img {
   object-fit: cover;
 }
 
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -48,7 +56,336 @@ body {
   font-family: var(--open-sans);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.page-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 380px);
+  grid-template-areas: "header"
+                       "main";
+  text-align: center;
+  padding-block: 3rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: header;
+  margin-bottom: 15rem;
+}
+
+header > svg {
+  width: 120px;
+  height: 50px;
+}
+
+header > button {
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--light-pink);
+  border-radius: 40px;
+  color: var(--light-pink);
+  font-size: 1.2rem;
+  letter-spacing: .5px;
+}
+
 main {
   display: grid;
-  grid-template-columns: minmax(225px, 375px);
+  grid-template-columns: subgrid;
+  grid-template-areas: "section-1"
+                       "section-2"
+                       "section-3"
+                       "section-4"
+                       "section-5";
 }
+
+
+.section-1 {
+  grid-area: section-1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas: "heading"
+                       "community-paragraph"
+                       "community-button"
+                       "mockup-image"
+                       "stats";
+  gap: 3rem;
+  place-items: center;
+  margin-bottom: 15rem;
+}
+
+.section-1 > h1 {
+  grid-area: heading;
+  max-width: 30rem;
+}
+
+.section-1 > p {
+  grid-area: community-paragraph;
+  max-width: 35rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.section-1 > button {
+  grid-area: community-button;
+  background-color: var(--pink);
+  padding: 1.5rem 5rem;
+  color: white;
+  border: none;
+  font-family: var(--open-sans);
+  font-size: 1.4rem;
+  box-shadow: 3px 3px 8px hsla(192, 100%, 9%, 0.3);
+  font-weight: 600;
+  border-radius: 40px;
+  margin-bottom: 10rem
+}
+
+.section-1 > .stats {
+  grid-area: stats;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+}
+
+.section-1 > img {
+  grid-area: mockup-image;
+  margin-bottom: 10rem;
+}
+.stats-info {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.stats-info > img {
+  width: 30px;
+}
+
+.stats-info > p:nth-child(2) {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.stats-info > p:nth-child(3) {
+  color: black;
+  opacity: 0.7;
+  align-self: center;
+}
+
+.messages-portion > p:nth-child(3) {
+  max-width: 10rem;
+  margin-right: 2rem;
+}
+
+.section-2 {
+  grid-area: section-2;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas: "sub-section-1-image"
+                       "sub-section-1-content"
+                       "sub-section-2-image"
+                       "sub-section-2-content"
+                       "sub-section-3-image"
+                       "sub-section-3-content";
+  gap: 13rem;
+  margin-bottom: 25rem;
+}
+
+.section-2 > img {
+  max-width: 300px;
+  justify-self: center;
+}
+
+.sub-section-1-image {
+  grid-area: sub-section-1-image;
+}
+
+.sub-section-1-content {
+  grid-area: sub-section-1-content;
+  margin-bottom: 5rem;
+}
+
+.sub-section-1-content > h2,
+.sub-section-2-content > h2, 
+.sub-section-3-content > h2 {
+  margin-bottom: 2rem;
+}
+
+.sub-section-content > p {
+  color: var(--very-dark-cyan);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.sub-section-2-image {
+  grid-area: sub-section-2-image;
+}
+
+.sub-section-2-content {
+  grid-area: sub-section-2-content;
+}
+
+.sub-section-3-image {
+  grid-area: sub-section-3-image;
+}
+
+.sub-section-3-content {
+  grid-area: sub-section-3-content;
+}
+
+
+
+.section-2-section {
+
+}
+
+.section-3 {
+  grid-area: section-3;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas: "section-3-heading"
+                       "section-3-button";
+  gap: 4rem;
+  justify-items: center;
+  margin-bottom: 20rem;
+}
+
+.section-3 > h2 {
+  grid-area: section-3-heading;
+}
+
+.section-3 > button {
+  grid-area: section-3-button;
+  padding: 1.5rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 3px 3px 8px hsla(192, 100%, 9%, 0.3);
+  background-color: var(--pink);
+  color: white;
+  font-family: var(--open-sans);
+}
+
+.section-4,
+.section-5 {
+  background-color: var(--very-dark-cyan)
+}
+
+.section-4 {
+  grid-area: section-4;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas: "newsletter"
+                       "header"
+                       "contact-info"
+                       "icon-container";
+  text-align: left;
+  gap: 2rem;
+  padding: 10rem 4rem 5rem;
+  color: var(--very-pale-blue);
+}
+
+.newsletter {
+  grid-area: newsletter;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.newsletter > p:nth-child(1) {
+  font-size: 2.2rem;
+  letter-spacing: .3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.newsletter > p:nth-child(2) {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.section-4-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-4-flex > input {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.section-4-flex > button {
+  align-self: end;
+  background-color: var(--pink);
+  border: none;
+  color: var(--very-pale-blue);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  padding: 1.7rem 4rem;
+  margin-bottom: 10rem;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header > img {
+  max-width: 175px;
+  filter: invert(99%) sepia(10%) saturate(42%) hue-rotate(258deg) brightness(300%) contrast(100%);
+}
+
+.header > p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+
+.contact-info {
+  grid-area: contact-info;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.section-4-info {
+  display: flex;
+  gap: 2rem;
+  height: 45px;
+  align-items: center;
+}
+
+.section-4-info > img {
+  
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.icon-container {
+  grid-area: icon-container;
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+
+
+
